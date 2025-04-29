@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 ML/DL Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Roboto', sans-serif; line-height: 1.6; background: #f4f4f4; color: #333; }
+        header, footer { background: #2c3e50; color: #fff; padding: 1.5rem; text-align: center; }
+        header h1 { margin-bottom: 0.5rem; font-size: 2rem; }
+        .container { padding: 2rem; max-width: 1200px; margin: auto; background: #fff; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        section { margin-bottom: 3rem; }
+        h2 { color: #2980b9; margin-bottom: 1rem; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; }
+        p, ul { margin-bottom: 1rem; }
+        ul { padding-left: 1.2rem; }
+        img { max-width: 100%; height: auto; border: 1px solid #ccc; margin-top: 1rem; border-radius: 8px; transition: transform 0.3s ease; }
+        img:hover { transform: scale(1.05); }
+        .gallery, .comparison-gallery { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+        .gallery img, .comparison-gallery img { width: 30%; border-radius: 8px; }
+        .highlight { background-color: #ecf0f1; padding: 1rem; border-left: 4px solid #3498db; margin-bottom: 2rem; }
+        .carousel { display: flex; overflow-x: auto; gap: 1rem; padding-bottom: 1rem; }
+        .carousel img { flex: 0 0 auto; width: 300px; border-radius: 10px; box-shadow: 0 0 5px rgba(0,0,0,0.2); }
+        footer p { font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>COVID-19 ML/DL Comparative Project</h1>
+        <p>Predicting Fatalities & Finding Image Similarities with AI</p>
+    </header>
+
+    <div class="container">
+        <section id="about">
+            <h2>About the Project</h2>
+            <div class="highlight">
+                <p><strong>Group:</strong> A5</p>
+                <p><strong>Members:</strong> Masrur Ibne Ali (200021131), Mustafid Bin Mostofa (200021141), Imtiaz Tanweer Rahim (200021150)</p>
+                <p><strong>Instructor:</strong> Md. Arefin Emon</p>
+                <p><strong>Institution:</strong> Department of EEE, Islamic University of Technology, IUT (OIC), AI-ML Course (EEE-4709)</p>
+                <p><strong>Submission Date:</strong> March 21, 2025</p>
+            </div>
+        </section>
+
+        <section id="background">
+            <h2>Why This Project Matters</h2>
+            <p>The COVID-19 pandemic demanded smarter predictions in healthcare. Motivated by real-world impact, our project investigates:</p>
+            <ul>
+                <li>Which machine learning model best predicts COVID-19 fatality?</li>
+                <li>Which deep learning architecture is most effective in finding similar medical images?</li>
+            </ul>
+            <p>We started with curiosity. We ended with insights.</p>
+        </section>
+
+        <section id="methodology">
+            <h2>Methodology</h2>
+            <p><strong>Machine Learning:</strong> KNN, Logistic Regression, and Random Forest were evaluated on a dataset of 1,048,575 patient records. Features were cleaned and scaled. Metrics included Accuracy, Precision, Recall, F1-Score, and ROC-AUC.</p>
+            <p><strong>Deep Learning:</strong> GoogLeNet, ResNet-101, and ZFNet were trained and compared using CALTECH-101 images. Feature embeddings were used for Nearest Neighbour search based on cosine similarity.</p>
+        </section>
+
+        <section id="gallery">
+            <h2>Visual Gallery</h2>
+            <div class="gallery">
+                <img src="images/confusion-matrix-knn.png" alt="KNN Confusion Matrix">
+                <img src="images/roc-comparison.png" alt="ROC Comparison Chart">
+                <img src="images/resnet-neighbours.png" alt="ResNet Nearest Neighbors">
+            </div>
+            <p><em>From left:</em> Confusion Matrix (KNN), ROC Curve (ML Models), Nearest Neighbours (ResNet)</p>
+        </section>
+
+        <section id="comparisons">
+            <h2>Model Comparison</h2>
+            <div class="comparison-gallery">
+                <img src="images/train-val-accuracy.png" alt="Training vs Validation Accuracy">
+                <img src="images/bar-compare.png" alt="Model Performance Comparison Bar Chart">
+                <img src="images/error-metrics.png" alt="Regression Error Metrics">
+            </div>
+            <p><em>Insights:</em> ResNet achieves better generalization. Logistic Regression leads in recall-focused scenarios. Random Forest is the most balanced overall.</p>
+        </section>
+
+        <section id="carousel">
+            <h2>Nearest Neighbors Showcase</h2>
+            <div class="carousel">
+                <img src="images/sample-plane.png" alt="Query Image - Plane">
+                <img src="images/nn1.png" alt="Nearest Match 1">
+                <img src="images/nn2.png" alt="Nearest Match 2">
+                <img src="images/nn3.png" alt="Nearest Match 3">
+            </div>
+            <p>These images demonstrate the CNN model’s ability to locate similar images based on deep feature vectors.</p>
+        </section>
+
+      <section id="balanced-comparison-models">
+    <h2>Balanced Model Comparison</h2>
+    <p>To visualize the impact of class balancing, we created a comparative chart summarizing the key performance metrics of KNN, Logistic Regression, and Random Forest after applying balancing techniques.</p>
+    <div class="comparison-gallery">
+        <img src="images/balanced-model-comparison.png" alt="Balanced Model Performance Comparison">
+	<img src="images/balanced-model-score.png" alt="ROC Comparison Chart">
+    </div>
+    <p><em>Insights:</em></p>
+    <ul>
+        <li><strong>Random Forest:</strong> Achieved the highest accuracy and ROC-AUC, indicating strong general performance.</li>
+        <li><strong>Logistic Regression:</strong> Delivered the best F1-score, making it effective for handling imbalanced positive cases.</li>
+        <li><strong>KNN:</strong> Maintained competitive recall and precision values after undersampling.</li>
+    </ul>
+</section>
+
+
+        <section id="results">
+            <h2>Key Findings</h2>
+            <ul>
+                <li><strong>Random Forest:</strong> Most accurate ML model (94.97%) and best R² (0.72).</li>
+                <li><strong>Logistic Regression:</strong> Best recall and F1-score (ideal for detecting actual positives).</li>
+                <li><strong>ResNet:</strong> Best generalization and accuracy among CNNs.</li>
+            </ul>
+        </section>
+
+        <section id="future">
+            <h2>What’s Next?</h2>
+            <p>Our limitations were mostly hardware-related. Future plans include:</p>
+            <ul>
+                <li>Using Grid Search and Cross Validation for tuning models.</li>
+                <li>Testing newer DL architectures like EfficientNet or DenseNet.</li>
+                <li>Deploying the best models into a clinical web dashboard.</li>
+            </ul>
+        </section>
+
+        <section id="references">
+            <h2>References</h2>
+            <ul>
+                <li>Jayakumar Kaliappan et al. (2021) – Regression Models for COVID-19 Reproduction Rate</li>
+                <li>Prasannavenkatesan Theerthagiri et al. (2020) – KNN for COVID Predictions</li>
+                <li>Bhuvaneswar et al. – Kaggle COVID Dataset Analysis</li>
+                <li>Comparative CNN Analysis – DOI:10.54254/2755-2721/44/20230676</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Group A5 - Artificial Intelligence Course Project | EEE-4709</p>
+    </footer>
+</body>
+</html>
